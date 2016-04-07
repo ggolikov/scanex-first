@@ -1,0 +1,32 @@
+{
+  "name": "scanex-first",
+  "version": "1.0.0",
+  "description": "scanex",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "build-js": "browserify main.js -o bundle.js",
+    "watch-js": "watchify main.js -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggolikov/scanex-first.git"
+  },
+  "keywords": [
+    "Scanex"
+  ],
+  "author": "ggolikov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ggolikov/scanex-first/issues"
+  },
+  "homepage": "https://github.com/ggolikov/scanex-first#readme",
+  "dependencies": {
+    "browserify": "^13.0.0",
+    "leaflet": "^0.7.7",
+    "leaflet-ajax": "^2.0.0",
+    "leaflet-geometryutil": "^0.4.0",
+    "rbush": "^1.4.2",
+    "watchify": "^3.7.0"
+  }
+}
