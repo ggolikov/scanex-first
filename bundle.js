@@ -2,8 +2,6 @@
 require('leaflet-ajax');
 L.Map.include(L.LayerIndexMixin);
 
-var bboxes = [];
-
 // btn
 var btn = document.getElementById('button');
 
