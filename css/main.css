@@ -5,8 +5,12 @@ html, body {
 }
 #map {
   width: auto;
-  height: 50%;
+  height: 100%;
 }
 #button {
-  margin:auto;
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 16px;
+font-weight: bold;
 }

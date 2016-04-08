@@ -1,8 +1,6 @@
 require('leaflet-ajax');
 L.Map.include(L.LayerIndexMixin);
 
-var bboxes = [];
-
 // btn
 var btn = document.getElementById('button');
 
@@ -24,10 +22,7 @@ var style = {
 }
 
 // layer
-var regions = new L.geoJson.ajax("http://kosmosnimki.ru/downloads/tasks_2016/regions_rf.geojson", {
-  onEachFeature: function(feature, layer) {
-      bboxes.push(layer.getBounds().toBBoxString().split(',').map(function(x){return +x}));
-  },
+var regions = L.geoJson.ajax("http://kosmosnimki.ru/downloads/tasks_2016/regions_rf.geojson", {
   style: style
 });
 
@@ -45,7 +40,7 @@ regions.once('data:loaded', function() {
   function update(evt){
     if (!tempMarker) {
       tempMarker = L.marker(evt.latlng).addTo(map);
-      tempMarker.snapediting = new L.Handler.MarkerSnap(map, tempMarker, {snapDistance: 3, snapVertices: true});
+      tempMarker.snapediting = new L.Handler.MarkerSnap(map, tempMarker, {snapDistance: 4, snapVertices: true});
       tempMarker.snapediting.addGuideLayer(regions);
       tempMarker.snapediting.enable();
     } else {
