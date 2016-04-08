@@ -41,7 +41,7 @@ regions.once('data:loaded', function() {
   function update(evt){
     if (!tempMarker) {
       tempMarker = L.marker(evt.latlng).addTo(map);
-      tempMarker.snapediting = new L.Handler.MarkerSnap(map, tempMarker, {snapDistance: 4, snapVertices: true});
+      tempMarker.snapediting = new L.Handler.MarkerSnap(map, tempMarker, {snapDistance: 20, snapVertices: true});
       tempMarker.snapediting.addGuideLayer(regions);
       tempMarker.snapediting.enable();
     } else {

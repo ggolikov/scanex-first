@@ -26,6 +26,7 @@
     "leaflet": "^0.7.7",
     "leaflet-ajax": "^2.0.0",
     "leaflet-geometryutil": "^0.4.0",
+    "leaflet-layerindex": "0.0.1",
     "rbush": "^1.4.2",
     "watchify": "^3.7.0"
   }
