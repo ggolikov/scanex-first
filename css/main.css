@@ -3,16 +3,10 @@ html, body {
   height: 100%;
   margin: 0;
 }
-#button-div {
-  align-content: center;
-  width: auto;
-  height: 10%;
-  min-height: 22px;
-}
-#button {
-  margin: 0 auto;
-}
 #map {
   width: auto;
-  height: 90%;
+  height: 50%;
+}
+#button {
+  margin:auto;
 }
