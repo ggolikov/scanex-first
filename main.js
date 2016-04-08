@@ -27,6 +27,7 @@ var regions = L.geoJson.ajax("http://kosmosnimki.ru/downloads/tasks_2016/regions
 });
 
 regions.once('data:loaded', function() {
+  map.indexLayer(regions);
   map.addLayer(regions);
 
   var tempMarker, marker;
