@@ -26,35 +26,33 @@ var regions = L.geoJson.ajax("http://kosmosnimki.ru/downloads/tasks_2016/regions
   style: style
 });
 
-regions.once('data:loaded', function() {
-  map.addLayer(regions);
-  console.log(map);
+  regions.once('data:loaded', function() {
+    map.addLayer(regions);
+    var tempMarker, marker;
 
-  var tempMarker, marker;
-
-  function createMarker(evt){
-    if (marker) map.removeLayer(marker);
-      marker = L.marker(evt.latlng).addTo(map);
-  }
-
-  // enable snapping
-  function update(evt){
-    if (!tempMarker) {
-      tempMarker = L.marker(evt.latlng).addTo(map);
-      tempMarker.snapediting = new L.Handler.MarkerSnap(map, tempMarker, {snapDistance: 20, snapVertices: true});
-      tempMarker.snapediting.addGuideLayer(regions);
-      tempMarker.snapediting.enable();
-    } else {
-      tempMarker.setLatLng(evt.latlng);
+    function createMarker(evt){
+      if (marker) map.removeLayer(marker);
+        marker = L.marker(evt.latlng).addTo(map);
     }
-    map.on('click', createMarker);
-  }
 
-  function activateCursor() {
-    map.on('mousemove', update);
-  }
+    // enable snapping
+    function update(evt){
+      if (!tempMarker) {
+        tempMarker = L.marker(evt.latlng).addTo(map);
+        tempMarker.snapediting = new L.Handler.MarkerSnap(map, tempMarker, {snapDistance: 4, snapVertices: true});
+        tempMarker.snapediting.addGuideLayer(regions);
+        tempMarker.snapediting.enable();
+      } else {
+        tempMarker.setLatLng(evt.latlng);
+      }
+      map.on('click', createMarker);
+    }
 
-  btn.addEventListener('click', activateCursor);
+    function activateCursor() {
+      map.on('mousemove', update);
+    }
+
+    btn.addEventListener('click', activateCursor);
 }, regions);
 
 },{"leaflet-ajax":4}],2:[function(require,module,exports){
