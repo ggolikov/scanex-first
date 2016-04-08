@@ -1,5 +1,4 @@
 require('leaflet-ajax');
-L.Map.include(L.LayerIndexMixin);
 
 // btn
 var btn = document.getElementById('button');
@@ -21,14 +20,14 @@ var style = {
   clickable: false
 }
 
-// layer
+// loading GeoJSON data
 var regions = L.geoJson.ajax("http://kosmosnimki.ru/downloads/tasks_2016/regions_rf.geojson", {
   style: style
 });
 
 regions.once('data:loaded', function() {
-  map.indexLayer(regions);
   map.addLayer(regions);
+  console.log(map);
 
   var tempMarker, marker;
 
