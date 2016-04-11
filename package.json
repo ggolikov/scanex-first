@@ -4,9 +4,10 @@
   "description": "scanex",
   "main": "main.js",
   "scripts": {
-    "test": "test",
-    "build-js": "browserify main.js -o bundle.js",
-    "watch-js": "watchify main.js -o bundle.js"
+    "build-js": "browserify src/main.js -o bundle.js",
+    "watch-js": "watchify src/main.js -o bundle.js",
+    "serve": "serve -p 3001",
+    "start": "npm run watch-js & npm run serve"
   },
   "repository": {
     "type": "git",
@@ -22,12 +23,21 @@
   },
   "homepage": "https://github.com/ggolikov/scanex-first#readme",
   "dependencies": {
-    "browserify": "^13.0.0",
     "leaflet": "^0.7.7",
     "leaflet-ajax": "^2.0.0",
     "leaflet-geometryutil": "^0.4.0",
     "leaflet-layerindex": "0.0.1",
+<<<<<<< HEAD
+    "leaflet-loading": "^0.1.17",
+    "leaflet-snap": "makinacorpus/Leaflet.Snap#gh-pages",
+=======
+>>>>>>> origin/master
     "rbush": "^1.4.2",
+    "rtree": "^1.4.2"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "serve": "^1.4.0",
     "watchify": "^3.7.0"
   }
 }

@@ -1,5 +1,8 @@
 # scanex-first
+<<<<<<< HEAD
 t
+=======
+>>>>>>> refs/remotes/origin/master
 This is a test task from Scanex.
 The goals were:
 - load Russian regions boundaries as GeoJSON;
