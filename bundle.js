@@ -816,7 +816,7 @@ L.GeometryUtil = L.extend(L.GeometryUtil || {}, {
 
     /**
        Returns the bearing in degrees clockwise from north (0 degrees)
-       from the first L.LatLng to the second, at the first LatLng
+       from the first L.LatLng to the second, at the first LatLng 
        @param {L.LatLng} latlng1: origin point of the bearing
        @param {L.LatLng} latlng2: destination point of the bearing
        @returns {float} degrees clockwise from north.
@@ -976,12 +976,12 @@ L.LayerIndexMixin = {
                 separate: false,
                 zoomControl: null,
                 spinjs: false,
-                spin: {
-                  lines: 7,
-                  length: 3,
-                  width: 3,
-                  radius: 5,
-                  rotate: 13,
+                spin: { 
+                  lines: 7, 
+                  length: 3, 
+                  width: 3, 
+                  radius: 5, 
+                  rotate: 13, 
                   top: "83%"
                 }
             },
@@ -990,7 +990,7 @@ L.LayerIndexMixin = {
                 L.setOptions(this, options);
                 this._dataLoaders = {};
 
-                // Try to set the zoom control this control is attached to from the
+                // Try to set the zoom control this control is attached to from the 
                 // options
                 if (this.options.zoomControl !== null) {
                     this.zoomControl = this.options.zoomControl;
@@ -1172,7 +1172,7 @@ L.LayerIndexMixin = {
             },
 
             _addLayerListeners: function(map) {
-                // Add listeners for begin and end of load to any layers already on the
+                // Add listeners for begin and end of load to any layers already on the 
                 // map
                 map.eachLayer(function(layer) {
                     if (!layer.on) return;
@@ -6558,7 +6558,7 @@ L.Path = (L.Path.SVG && !window.L_PREFER_CANVAS) || !L.Browser.canvas ? L.Path :
 		}
 
 		this._requestUpdate();
-
+		
 		this.fire('remove');
 		this._map = null;
 	},
@@ -9613,7 +9613,7 @@ L.Control.Attribution = L.Control.extend({
 				this.addAttribution(map._layers[i].getAttribution());
 			}
 		}
-
+		
 		map
 		    .on('layeradd', this._onLayerAdd, this)
 		    .on('layerremove', this._onLayerRemove, this);
@@ -11887,7 +11887,7 @@ var regions = L.geoJson.ajax(
 
     function createMarker(evt){
       if (marker) map.removeLayer(marker);
-        marker = L.marker(evt.latlng).addTo(map);
+        marker = L.marker(tempMarker.getLatLng()).addTo(map);
     }
 
     // enable snapping
