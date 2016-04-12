@@ -50,7 +50,7 @@ var regions = L.geoJson.ajax(
 
     function createMarker(evt){
       if (marker) map.removeLayer(marker);
-        marker = L.marker(evt.latlng).addTo(map);
+        marker = L.marker(tempMarker.getLatLng()).addTo(map);
     }
 
     // enable snapping
